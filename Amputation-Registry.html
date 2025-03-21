@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Complete Amputation Data Collection Form</title>
+    <style>
+    body {
+        background-color: #0a1f44; /* Dark Blue */
+        color: #ffffff; /* White color for text readability */
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    .section {
+        background-color: #142d5c; /* Slightly lighter blue for sections */
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-top: 8px;
+        color: #ffffff;
+    }
+
+    select, input, textarea {
+        width: 100%;
+        padding: 6px;
+        margin-top: 4px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #1e5bbf;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #174595;
+    }
+    
+    h1, h2 {
+        color: #ffffff;
+    }
+</style>
+
+</head>
+
+<div id="loginDiv">
+    <h2>Please Log In</h2>
+    <label>Username: <input type="text" id="username"></label>
+    <label>Password: <input type="password" id="password"></label>
+    <button onclick="login()">Login</button>
+</div>
+
+<script>
+    // Set your desired username/password here
+    const validUsername = 'admin';
+    const validPassword = '12345';
+
+    function login() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        if (username === validUsername && password === validPassword) {
+            document.getElementById('loginDiv').style.display = 'none';
+            document.getElementById('formDiv').style.display = 'block';
+        } else {
+            alert('Incorrect username or password.');
+        }
+    }
+</script>
+
+<div id="formDiv" style="display:none;">
+
+<body>
+
+<h1>Complete Amputation Data Collection Form</h1>
+
+<form>
+
+<!-- New Patient Information Section -->
+
+<div class="section">
+    <h2>Patient Information</h2>
+    <label>Name: <input type="text"></label>
+    <label>Age: <input type="number"></label>
+    <label>MRN: <input type="text"></label>
+    <label>Hospital: <input type="text"></label>
+    <label>NATIONAL ID: <input type="text"></label>
+    <label>Contact Number: <input type="text"></label>
+
+</div>
+
+
+<!-- 1. Patient Demographics -->
+<div class="section">
+    <h2>1. Patient Demographics</h2>
+    <label>Age: <input type="number"></label>
+    <label>Sex:
+        <select>
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+    </label>
+    <label>Weight (kg): <input type="number"></label>
+    <label>Height (cm): <input type="number"></label>
+    <label>Smoking Status:
+        <select>
+            <option>Never Smoker</option>
+            <option>Current Smoker</option>
+            <option>Former Smoker</option>
+        </select>
+    </label>
+</div>
+
+<!-- 2. Comorbidities -->
+<div class="section">
+    <h2>2. Comorbidities</h2>
+    <label>Diabetes Mellitus: <select><option>Yes</option><option>No</option></select></label>
+    <label>Hypertension: <select><option>Yes</option><option>No</option></select></label>
+    <label>Peripheral Arterial Disease: <select><option>Yes</option><option>No</option></select></label>
+    <label>Chronic Kidney Disease: <select><option>Yes</option><option>No</option></select></label>
+    <label>Coronary Artery Disease: <select><option>Yes</option><option>No</option></select></label>
+    <label>Stroke/TIA: <select><option>Yes</option><option>No</option></select></label>
+    <label>COPD or Respiratory Disease: <select><option>Yes</option><option>No</option></select></label>
+    <label>Previous Limb Surgeries: <select><option>Yes</option><option>No</option></select></label>
+</div>
+
+<!-- 3. Preoperative Clinical Data -->
+<div class="section">
+    <h2>3. Preoperative Clinical Data</h2>
+    <label>Indication for Amputation:
+        <select>
+            <option>Ischemia/Gangrene</option>
+            <option>Infection</option>
+            <option>Trauma</option>
+            <option>Malignancy</option>
+            <option>Other</option>
+        </select>
+    </label>
+    <label>Duration of Symptoms (days): <input type="number"></label>
+    <label>Previous Limb Salvage Attempts: <select><option>Yes</option><option>No</option></select></label>
+    <label>Preoperative Vascular Assessment:
+        <select>
+            <option>Doppler Ultrasound</option>
+            <option>Angiography</option>
+            <option>ABI Measurement</option>
+            <option>CT Angiogram</option>
+            <option>None</option>
+        </select>
+    </label>
+    <label>Infection Presence: <select><option>Yes</option><option>No</option></select></label>
+</div>
+
+<!-- 4. Surgical Data -->
+<div class="section">
+    <h2>4. Surgical Data</h2>
+    <label>Type of Amputation:
+        <select>
+            <option>Above-Knee (AKA)</option>
+            <option>Below-Knee (BKA)</option>
+            <option>Transmetatarsal</option>
+            <option>Guillotine</option>
+        </select>
+    </label>
+    <label>Nature of Amputation: 
+        <select>
+            <option>Elective</option>
+            <option>Emergency</option>
+        </select>
+    </label>
+    <label>Surgical Technique:
+        <select>
+            <option>Myodesis</option>
+            <option>Myoplasty</option>
+            <option>Guillotine</option>
+            <option>Other</option>
+        </select>
+    </label>
+    <label>Surgeon Experience:
+        <select>
+            <option>Resident</option>
+            <option>Specialist</option>
+            <option>Consultant</option>
+        </select>
+    </label>
+    <label>Anesthesia Type:
+        <select>
+            <option>General</option>
+            <option>Spinal</option>
+            <option>Epidural</option>
+            <option>Local/Regional</option>
+        </select>
+    </label>
+    <label>Surgery Duration (minutes): <input type="number"></label>
+    <label>Estimated Blood Loss: <input type="text"></label>
+    <label>Intraoperative Complications: <textarea rows="2"></textarea></label>
+</div>
+<!-- 5. Postoperative Outcomes (Expanded) -->
+<div class="section">
+    <h2>5. Postoperative Outcomes (Expanded)</h2>
+    <label>Immediate Complications: <textarea rows="2"></textarea></label>
+    <label>Early Complications (within 30 days): <textarea rows="2"></textarea></label>
+    <label>Late Complications (>30 days): <textarea rows="2"></textarea></label>
+    <label>Stump Healing Time (days): <input type="number"></label>
+    <label>Surgical Site Infection:
+        <select><option>Yes</option><option>No</option></select>
+    </label>
+    <label>Antibiotics Administered: <textarea rows="2"></textarea></label>
+    <label>Re-interventions: <textarea rows="2"></textarea></label>
+    <label>Pain Control Method: <textarea rows="2"></textarea></label>
+    <label>Length of Hospital Stay (days): <input type="number"></label>
+    <label>ICU Admission:
+        <select><option>Yes</option><option>No</option></select>
+    </label>
+    <label>Blood Transfusion Required:
+        <select><option>Yes</option><option>No</option></select>
+    </label>
+    <label>DVT/PE occurrence:
+        <select><option>Yes</option><option>No</option></select>
+    </label>
+    <label>Mobility Status at Discharge: <textarea rows="2"></textarea></label>
+    <label>Physiotherapy Initiation (days post-op): <input type="number"></label>
+    <label>Readmission within 30 days:
+        <select><option>Yes</option><option>No</option></select>
+    </label>
+    <label>Mortality within 30 days:
+        <select><option>Yes</option><option>No</option></select>
+    </label>
+</div>
+
+<!-- 6. Rehabilitation & Functional Outcomes -->
+<div class="section">
+    <h2>6. Rehabilitation & Functional Outcomes</h2>
+    <label>Prosthetic Fitting Time (weeks post-op): <input type="number"></label>
+    <label>Prosthesis Usage:
+        <select>
+            <option>Regular</option>
+            <option>Occasional</option>
+            <option>Never</option>
+        </select>
+    </label>
+    <label>Mobility Status:
+        <select>
+            <option>Independent Ambulation</option>
+            <option>Assisted Ambulation (walker/cane)</option>
+            <option>Wheelchair-dependent</option>
+            <option>Bed-bound</option>
+        </select>
+    </label>
+    <label>Phantom Limb Pain:
+        <select>
+            <option>None</option>
+            <option>Mild</option>
+            <option>Moderate</option>
+            <option>Severe</option>
+        </select>
+    </label>
+    <label>Quality of Life Assessment: <textarea rows="2"></textarea></label>
+    <label>Return to Daily Activities:
+        <select>
+            <option>Full</option>
+            <option>Partial</option>
+            <option>None</option>
+        </select>
+    </label>
+</div>
+
+<!-- 7. Socioeconomic Information (Expanded) -->
+<div class="section">
+    <h2>7. Socioeconomic Information (Expanded)</h2>
+    <label>Living Situation:
+        <select>
+            <option>Alone</option>
+            <option>With family</option>
+            <option>Assisted living facility</option>
+        </select>
+    </label>
+    <label>Marital Status:
+        <select>
+            <option>Single</option>
+            <option>Married</option>
+            <option>Divorced</option>
+            <option>Widowed</option>
+        </select>
+    </label>
+    <label>Number of Dependents: <input type="number"></label>
+    <label>Primary Caregiver: <input type="text"></label>
+    <label>Occupation Status:
+        <select>
+            <option>Employed</option>
+            <option>Retired</option>
+            <option>Unemployed</option>
+            <option>Disabled</option>
+        </select>
+    </label>
+    <label>Monthly Income Level:
+        <select>
+            <option>Low</option>
+            <option>Moderate</option>
+            <option>High</option>
+        </select>
+    </label>
+    <label>Insurance Coverage:
+        <select>
+            <option>Yes</option>
+            <option>No</option>
+            <option>Partial</option>
+        </select>
+    </label>
+    <label>Educational Level: <input type="text"></label>
+    <label>Housing Accessibility:
+        <select>
+            <option>Fully Accessible</option>
+            <option>Partially Accessible</option>
+            <option>Not Accessible</option>
+        </select>
+    </label>
+    <label>Transportation Availability: <textarea rows="2"></textarea></label>
+    <label>Access to Healthcare Facilities: <textarea rows="2"></textarea></label>
+    <label>Community Support Availability:
+        <select><option>Yes</option><option>No</option></select>
+    </label>
+    <label>Psychological Support Access:
+        <select><option>Yes</option><option>No</option></select>
+    </label>
+    <label>Social Support Network:
+        <select>
+            <option>Strong</option>
+            <option>Moderate</option>
+            <option>Weak</option>
+        </select>
+    </label>
+</div>
+
+<!-- 8. Mental Health Assessment (Expanded) -->
+<div class="section">
+    <h2>8. Mental Health Assessment (Expanded)</h2>
+    <label>Preoperative Mental Health History: <textarea rows="2"></textarea></label>
+    <label>Postoperative Psychological Symptoms: <textarea rows="2"></textarea></label>
+    <label>Psychological Screening Performed: <textarea rows="2"></textarea></label>
+    <label>Referral to Mental Health Services:
+        <select><option>Yes</option><option>No</option></select>
+    </label>
+    <label>Psychological Treatment Provided: <textarea rows="2"></textarea></label>
+    <label>Psychotropic Medication: <textarea rows="2"></textarea></label>
+    <label>Adjustment Difficulties:
+        <select>
+            <option>None</option>
+            <option>Mild</option>
+            <option>Moderate</option>
+            <option>Severe</option>
+        </select>
+    </label>
+    <label>Sleep Disturbances:
+        <select>
+            <option>None</option>
+            <option>Mild</option>
+            <option>Moderate</option>
+            <option>Severe</option>
+        </select>
+    </label>
+    <label>Support Group Participation:
+        <select><option>Yes</option><option>No</option></select>
+    </label>
+    <label>Coping Strategies Used: <textarea rows="2"></textarea></label>
+    <label>Follow-up for Mental Health:
+        <select>
+            <option>Regular</option>
+            <option>Occasional</option>
+            <option>None</option>
+        </select>
+    </label>
+</div>
+
+<button type="button" onclick="submitDualFunction()">Submit & Download Excel</button>
+
+<script>
+function submitDualFunction() {
+    let questions = [];
+    let answers = [];
+
+    document.querySelectorAll('label').forEach(label => {
+        const question = label.childNodes[0].textContent.trim().replace(':', '');
+        const input = label.querySelector('input, select, textarea');
+        const answer = input ? input.value : '-';
+        questions.push(question);
+        answers.push(answer);
+    });
+
+    // Create table with questions on X-axis, answers on Y-axis
+    let table = '<table border="1"><tr>';
+    questions.forEach(question => {
+        table += `<th>${question}</th>`;
+    });
+    table += '</tr><tr>';
+    answers.forEach(answer => {
+        table += `<td>${answer}</td>`;
+    });
+    table += '</tr></table>';
+
+    const blob = new Blob([table], {type:'application/vnd.ms-excel'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'AmputationData.xls';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    // Copy clearly formatted data to clipboard
+    let plainText = questions.map((q,i)=>`${q}: ${answers[i]}`).join('\n');
+    navigator.clipboard.writeText(plainText).then(() => {
+        alert('Data copied to clipboard and Excel file downloaded.');
+    });
+}
+</script>
+
+
+</form>
+</body>
+</html>
+
+</div>
